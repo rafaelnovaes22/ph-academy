@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PH Academy, evolua no EA FC</title>
+<meta name="description" content="Trilhas por nível, aulas curtas, mentalidade e chat com a metodologia PH. Do básico ao avançado, rumo ao topo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0f0a;--sm:#131a12;--ink:#f2f7ea;--mut:#a9b89a;--vt:#b6f34a;--gd:#ffd23f;--ln:rgba(242,247,234,.14);--rd:20px}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Archivo,system-ui,sans-serif;margin:0;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(60rem 30rem at 85% -5%,rgba(182,243,74,.14),transparent);pointer-events:none}
+::selection{background:var(--vt);color:#0a0f0a}
+img{display:block;max-width:100%}
+a{color:inherit}
+.d{font-family:"Archivo Black",Archivo,sans-serif;font-weight:400;line-height:.92;letter-spacing:-.02em;text-transform:uppercase}
+.pl{position:fixed;inset:0;z-index:200;background:#070a07;display:flex;align-items:flex-end;justify-content:space-between;padding:5vw;transition:opacity .7s ease,visibility .7s}
+.pl.g{opacity:0;visibility:hidden}
+.pl b{font-family:"Archivo Black",sans-serif;font-size:clamp(2.6rem,10vw,7.5rem);line-height:1}
+.pl b i{font-style:normal;color:var(--vt)}
+.pl span{font-size:.8rem;letter-spacing:.35em;text-transform:uppercase;color:var(--mut)}
+.cur{position:fixed;z-index:190;width:14px;height:14px;border-radius:50%;background:var(--vt);pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .25s,height .25s}
+@media(hover:none){.cur{display:none}}
+.hd{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4vw;border-bottom:1px solid transparent;transition:background .35s,border-color .35s}
+.hd.f{background:rgba(10,15,10,.86);backdrop-filter:blur(14px);border-color:var(--ln)}
+.hd-l{font-family:"Archivo Black",sans-serif;font-size:1.1rem;text-decoration:none}
+.hd-l i{font-style:normal;color:var(--vt)}
+.hd-n{display:flex;gap:2rem}
+.hd-n a{text-decoration:none;font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+.hd-n a:hover{color:var(--vt)}
+.hd-c{background:var(--vt);color:#0a0f0a;border:0;border-radius:999px;padding:.8rem 1.6rem;font-weight:800;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;font-family:inherit}
+.hd-m{display:none;background:none;border:0;color:var(--ink);font-size:1.6rem;cursor:pointer}
+.hro{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hro-i{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;transform:scale(1.12);animation:zm 9s ease-out forwards}
+@keyframes zm{to{transform:scale(1)}}
+.hro-v{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,15,10,.6),rgba(10,15,10,.15) 40%,rgba(10,15,10,.94))}
+.hro-x{position:relative;padding:0 4vw 4vh;display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:end}
+.hro-s{display:inline-block;font-size:.78rem;letter-spacing:.4em;text-transform:uppercase;color:var(--vt);border:1px solid rgba(182,243,74,.5);border-radius:999px;padding:.55rem 1.2rem;margin-bottom:1.4rem}
+.hro-t{font-size:clamp(2.6rem,9.5vw,8.5rem);margin:0}
+.hro-t em{font-style:normal;color:var(--vt)}
+.hro-p{max-width:34rem;color:#e6ebda;font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.6}
+.hro-a{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem}
+.bt{display:inline-block;border-radius:999px;padding:1rem 2.1rem;font-weight:800;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:inherit}
+.bt1{background:var(--vt);color:#0a0f0a}
+.bt1:hover{transform:translateY(-2px)}
+.bt2{border-color:var(--ln);color:var(--ink)}
+.bt2:hover{border-color:var(--vt);color:var(--vt)}
+.hro-pf{border-radius:22px;overflow:hidden;border:1px solid var(--ln);box-shadow:0 30px 60px rgba(0,0,0,.5);max-height:56vh}
+.hro-pf img{width:100%;height:100%;object-fit:cover}
+.hro-f{position:relative;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ln);margin-top:3rem;grid-column:1/-1}
+.hro-f div{padding:1.2rem 4vw 1.6rem;border-left:1px solid var(--ln)}
+.hro-f div:first-child{border-left:0;padding-left:0}
+.hro-f b{font-family:"Archivo Black",sans-serif;font-size:clamp(1.3rem,2.4vw,2rem);display:block}
+.hro-f span{font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--mut)}
+.mq{border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);overflow:hidden;background:var(--vt);color:#0a0f0a;padding:.9rem 0}
+.mq-t{display:flex;gap:3rem;width:max-content;animation:mq 22s linear infinite;font-family:"Archivo Black",sans-serif;text-transform:uppercase;font-size:1rem;letter-spacing:.06em;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mn{padding:16vh 4vw;max-width:90rem}
+.mn p{font-size:clamp(1.6rem,4.2vw,3.4rem);line-height:1.25;margin:0;font-weight:600}
+.mn em{font-style:normal;color:var(--vt)}
+.sc{padding:10vh 4vw}
+.sc-h{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--ln);padding-bottom:1.2rem;margin-bottom:3rem}
+.sc-h h2{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:clamp(1.9rem,5vw,3.8rem);margin:0}
+.sc-h span{color:var(--mut);font-size:.8rem;letter-spacing:.3em;text-transform:uppercase}
+.trk{background:var(--sm);border:1px solid var(--ln);border-radius:calc(var(--rd) + 6px);margin:0 4vw 1.2rem;padding:2.5rem;display:grid;grid-template-columns:.8fr 1.2fr;gap:2.5rem}
+.trk h3{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:clamp(1.5rem,3.4vw,2.4rem);margin:0 0 .8rem}
+.trk h3 i{font-style:normal;color:var(--vt)}
+.trk>p{color:var(--mut);line-height:1.7;margin:0}
+.lsn{list-style:none;margin:1.2rem 0 0;padding:0}
+.lsn li{display:flex;gap:1rem;align-items:baseline;padding:.85rem 0;border-top:1px solid var(--ln);cursor:pointer}
+.lsn li:hover b{color:var(--vt)}
+.lsn n{font-family:"Archivo Black",sans-serif;color:var(--vt);font-size:.9rem;flex:none;width:3rem}
+.lsn b{font-size:1rem}
+.lsn span{display:block;color:var(--mut);font-size:.85rem;font-weight:400}
+.lsn .tm{margin-left:auto;color:var(--mut);font-size:.8rem;flex:none}
+.mnd{background:linear-gradient(135deg,#141b10,#0a0f0a);border:1px solid rgba(255,210,63,.45);border-radius:calc(var(--rd) + 6px);margin:0 4vw;padding:3.5rem 3rem}
+.mnd h2{font-size:clamp(1.8rem,4.5vw,3rem);margin:0 0 .6rem}
+.mnd h2 em{font-style:normal;color:var(--gd)}
+.mnd>p{color:var(--mut);max-width:40rem;line-height:1.7}
+.qz{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
+.qz button{background:#0a0f0a;border:1px solid var(--ln);color:var(--ink);border-radius:16px;padding:1.4rem;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;text-align:left;line-height:1.5}
+.qz button:hover{border-color:var(--gd)}
+.qz button small{display:block;color:var(--mut);font-weight:400;margin-top:.4rem}
+#qzr{display:none;margin-top:1.5rem;background:rgba(255,210,63,.08);border:1px solid rgba(255,210,63,.4);border-radius:16px;padding:1.4rem;line-height:1.7}
+#qzr.on{display:block}
+.prc{background:var(--vt);color:#0a0f0a;border-radius:calc(var(--rd) + 6px);margin:0 4vw;padding:4rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.prc h2{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:clamp(2rem,4.5vw,3.4rem);margin:0 0 1rem;line-height:1}
+.prc ul{list-style:none;padding:0;margin:0 0 2rem}
+.prc li{padding:.7rem 0;border-top:1px solid rgba(10,15,10,.25);font-weight:600}
+.prc .old{text-decoration:line-through;opacity:.6;font-size:1.2rem}
+.prc .now{font-family:"Archivo Black",sans-serif;font-size:clamp(2.6rem,6vw,4.5rem);display:block}
+.prc .bt1{background:#0a0f0a;color:var(--vt)}
+.ag{background:var(--sm);border:1px solid var(--ln);border-radius:calc(var(--rd) + 6px);margin:0 4vw;padding:4rem 3.5rem}
+.ag h2{font-size:clamp(1.9rem,4.2vw,3.2rem);margin:0 0 1rem}
+.ag p{color:var(--mut);line-height:1.7;max-width:40rem}
+.lv{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
+.lv div{background:#0a0f0a;border:1px solid var(--ln);border-radius:16px;padding:1.6rem}
+.lv b{display:block;font-size:1.1rem;margin-bottom:.4rem}
+.lv span{color:var(--mut);font-size:.9rem}
+.fq-i{border-bottom:1px solid var(--ln)}
+.fq-q{width:100%;background:none;border:0;color:var(--ink);display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;font-size:1.1rem;font-weight:600;cursor:pointer;text-align:left;font-family:inherit}
+.fq-q i{font-style:normal;color:var(--vt);font-size:1.5rem;transition:transform .3s}
+.fq-i.o .fq-q i{transform:rotate(45deg)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--mut);line-height:1.7}
+.fq-a p{margin:0 0 1.5rem;max-width:44rem}
+.ft{padding:12vh 4vw 2rem;border-top:1px solid var(--ln);margin-top:10vh}
+.ft-g{font-family:"Archivo Black",sans-serif;font-size:clamp(2.4rem,9vw,8rem);margin:0}
+.ft-g em{font-style:normal;color:var(--vt)}
+.ft-r{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:3rem 0;padding:2rem 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.ft-r h4{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);margin:0 0 1rem}
+.ft-r p,.ft-r a{line-height:2;color:var(--ink);text-decoration:none}
+.ft-b{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--mut);font-size:.85rem}
+.rv{opacity:0;transform:translateY(36px);transition:opacity .8s ease,transform .8s ease}
+.rv.on{opacity:1;transform:none}
+@media(max-width:960px){.hd-n{display:none}.hd-m{display:block}.hd-n.o{display:flex;position:fixed;inset:0;background:#0a0f0a;flex-direction:column;align-items:center;justify-content:center;gap:2rem}.hro-x,.trk,.prc,.ag{grid-template-columns:1fr}.qz,.lv{grid-template-columns:1fr}.hro-f{grid-template-columns:repeat(2,1fr)}.hro-f div:nth-child(3){border-left:0;padding-left:0}.ft-r{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s !important;transition-duration:.001s !important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="pl" id="pl"><span>PH Academy</span><b><i id="pln">0</i>%</b></div>
+<div class="cur" id="cur"></div>
+<header class="hd" id="hd">
+<a class="hd-l" href="#topo">PH <i>ACADEMY</i></a>
+<nav class="hd-n" id="hdn">
+<a href="#trilhas">Trilhas</a>
+<a href="#mente">Mente</a>
+<a href="#acesso">Acesso</a>
+<a href="#lives">Lives</a>
+</nav>
+<a class="hd-c" href="https://pay.hotmart.com/V92534280P?off=8jxrtkyv&checkoutMode=10" target="_blank" rel="noopener">Evoluir agora</a>
+<button class="hd-m" id="hdm" aria-label="Abrir menu">☰</button>
+</header>
+<section class="hro" id="topo">
+<img class="hro-i" src="https://framerusercontent.com/images/UHrAwmZo9qGkmjApI3RvIBzvn4.png" alt="PH Freitas em ação" fetchpriority="high">
+<div class="hro-v"></div>
+<div class="hro-x">
+<div>
+<span class="hro-s">Ex-pro player e coach</span>
+<h1 class="hro-t d">Jogue em <em>outro nível.</em></h1>
+<p class="hro-p">Trilhas por nível, aulas curtas, mentalidade de competidor e o método de quem viveu o topo do EA FC.</p>
+<div class="hro-a">
+<a class="bt bt1" href="https://pay.hotmart.com/V92534280P?off=8jxrtkyv&checkoutMode=10" target="_blank" rel="noopener">Começar agora</a>
+<a class="bt bt2" href="#trilhas">Ver trilhas</a>
+</div>
+</div>
+<div class="hro-pf rv"><img src="https://framerusercontent.com/images/3hz5EWcOCZZTvUZ6fE2E9gWuDU.png" alt="PH Freitas"></div>
+<div class="hro-f">
+<div><b>+1000</b><span>alunos evoluindo</span></div>
+<div><b>Top 8</b><span>mundial de clubes</span></div>
+<div><b>7 anos</b><span>como coach</span></div>
+<div><b>5.0</b><span>nota da comunidade</span></div>
+</div>
+</div>
+</section>
+<div class="mq" aria-hidden="true"><div class="mq-t" id="mqt">
+<span>Defesa manual ★</span><span>Ataque inteligente ★</span><span>Leitura de jogo ★</span><span>Mentalidade ★</span><span>UT Champions ★</span><span>Atualizações inclusas ★</span>
+</div></div>
+<section class="mn rv">
+<p>Fundamento não muda de jogo para jogo. <em>Leitura, decisão e posicionamento</em> você aprende aqui e leva para qualquer meta, qualquer patch, qualquer temporada.</p>
+</section>
+<section class="sc" id="trilhas">
+<div class="sc-h rv"><h2 class="d">Trilhas por nível</h2><span>aulas curtas, ordem certa</span></div>
+</section>
+<article class="trk rv">
+<div><h3 class="d"><i>01.</i> Iniciante</h3><p>Do zero ao primeiro Elite. Fundamentos que 90 por cento pula e paga caro depois.</p></div>
+<div><ul class="lsn">
+<li><n>01</n><div><b>Controles que decidem jogo</b><span>o essencial sem decorar manual</span></div><span class="tm">6 min</span></li>
+<li><n>02</n><div><b>Posicionamento base</b><span>onde cada jogador tem que estar</span></div><span class="tm">8 min</span></li>
+<li><n>03</n><div><b>Primeira saída de bola</b><span>construção sem chutão</span></div><span class="tm">7 min</span></li>
+<li><n>04</n><div><b>Marcação simples</b><span>o botão certo na hora certa</span></div><span class="tm">9 min</span></li>
+</ul></div>
+</article>
+<article class="trk rv">
+<div><h3 class="d"><i>02.</i> Intermediário</h3><p>Para quem trava na divisão 5. Leitura, decisão e o meta atual mastigado.</p></div>
+<div><ul class="lsn">
+<li><n>05</n><div><b>Defesa manual de verdade</b><span>sem ela o próximo jogo te pune</span></div><span class="tm">10 min</span></li>
+<li><n>06</n><div><b>Ataque imprevisível</b><span>variação que quebra marcador</span></div><span class="tm">9 min</span></li>
+<li><n>07</n><div><b>Finalização por zona</b><span>cada canto tem um jeito</span></div><span class="tm">8 min</span></li>
+<li><n>08</n><div><b>Leitura de adversário</b><span>descubra o plano dele em 10 minutos</span></div><span class="tm">10 min</span></li>
+</ul></div>
+</article>
+<article class="trk rv">
+<div><h3 class="d"><i>03.</i> Avançado</h3><p>Nível Champions e Elite. Detalhe que separa top 100 de top 1000.</p></div>
+<div><ul class="lsn">
+<li><n>09</n><div><b>Pressão pós-perda</b><span>recuperar em 6 segundos</span></div><span class="tm">9 min</span></li>
+<li><n>10</n><div><b>Gestão de jogo</b><span>quando acelerar e quando matar</span></div><span class="tm">10 min</span></li>
+<li><n>11</n><div><b>Análise da própria gameplay</b><span>o protocolo de correção do PH</span></div><span class="tm">12 min</span></li>
+<li><n>12</n><div><b>Meta do patch atual</b><span>atualizado a cada atualização</span></div><span class="tm">8 min</span></li>
+</ul></div>
+</article>
+<section class="mnd rv" id="mente" style="margin-top:1.2rem">
+<h2 class="d">Mente de <em>competidor.</em></h2>
+<p>Responda com sinceridade e descubra seu ponto fraco mental. O protocolo aparece na hora.</p>
+<div class="qz">
+<button data-q="tilt">TILTO FÁCIL<small>perco a cabeça no segundo gol</small></button>
+<button data-q="final">SUMO NA FINAL<small>travo em jogo decisivo</small></button>
+<button data-q="rank">RESPEITO RANK ALTO<small>entro derrotado contra bom</small></button>
+</div>
+<div id="qzr"></div>
+</section>
+<section class="prc rv" id="acesso" style="margin-top:10vh">
+<div>
+<h2 class="d">Acesso completo.</h2>
+<ul>
+<li>7 módulos e 4 bônus</li>
+<li>Comunidade exclusiva de alunos</li>
+<li>Suporte online</li>
+<li>1 ano de acesso com atualizações</li>
+<li>Garantia incondicional de 7 dias</li>
+</ul>
+</div>
+<div>
+<span class="old">De R$ 597</span>
+<span class="now">12x R$ 30,72</span>
+<p>ou R$ 297 à vista. Compra protegida pela Hotmart.</p>
+<a class="bt bt1" href="https://pay.hotmart.com/V92534280P?off=8jxrtkyv&checkoutMode=10" target="_blank" rel="noopener" style="background:#0a0f0a;color:var(--vt)">Evoluir agora →</a>
+</div>
+</section>
+<section class="ag rv" id="lives" style="margin-top:10vh">
+<div>
+<h2 class="d">Lives e <em>conteúdo diário.</em></h2>
+<p>Análise de gameplay, meta do patch e resposta ao vivo. Acompanhe no Instagram e no YouTube para não perder a próxima.</p>
+<p><b style="color:var(--vt)">Ex-pro player ensinando ao vivo.</b><br>Traga sua gameplay que ele analisa.</p>
+</div>
+<div class="lv">
+<div><b>Instagram</b><span>@phfreitas90, bastidor e aviso de live</span><br><br><a class="bt bt1" style="padding:.8rem 1.4rem" href="https://www.instagram.com/phfreitas90/" target="_blank" rel="noopener">Abrir</a></div>
+<div><b>YouTube</b><span>análises, dicas e táticas</span><br><br><a class="bt bt1" style="padding:.8rem 1.4rem" href="https://www.youtube.com/@PHfreitas90" target="_blank" rel="noopener">Assistir</a></div>
+<div><b>Kick</b><span>gameplay ao vivo</span><br><br><a class="bt bt1" style="padding:.8rem 1.4rem" href="https://kick.com/phfreitas/about" target="_blank" rel="noopener">Ver</a></div>
+</div>
+</section>
+<section class="sc">
+<div class="sc-h rv"><h2 class="d">Dúvidas comuns</h2><span>faq</span></div>
+<div class="rv">
+<div class="fq-i"><button class="fq-q">Nunca joguei, serve para mim?<i>+</i></button><div class="fq-a"><p>Sim. A trilha iniciante começa do zero absoluto até o primeiro Elite.</p></div></div>
+<div class="fq-i"><button class="fq-q">As aulas são ao vivo ou gravadas?<i>+</i></button><div class="fq-a"><p>Gravadas e curtas, para assistir quantas vezes precisar, no seu ritmo.</p></div></div>
+<div class="fq-i"><button class="fq-q">Por quanto tempo tenho acesso?<i>+</i></button><div class="fq-a"><p>1 ano completo, incluindo todas as atualizações do jogo.</p></div></div>
+<div class="fq-i"><button class="fq-q">E se eu não gostar?<i>+</i></button><div class="fq-a"><p>Garantia incondicional de 7 dias, devolução total sem perguntas.</p></div></div>
+</div>
+</section>
+<footer class="ft">
+<h2 class="ft-g d">Bora pro <em>topo?</em></h2>
+<div class="ft-r">
+<div><h4>Academy</h4><p>Trilhas por nível<br>Mentalidade<br>Lives</p></div>
+<div><h4>Entre</h4><p><a href="https://pay.hotmart.com/V92534280P?off=8jxrtkyv&checkoutMode=10" target="_blank" rel="noopener">Checkout Hotmart</a><br><a href="https://phacademy.net.br/" target="_blank" rel="noopener">Site oficial</a><br><a href="#topo">Voltar ao topo ↑</a></p></div>
+<div><h4>Segue</h4><p><a href="https://www.instagram.com/phfreitas90/" target="_blank" rel="noopener">Instagram</a><br><a href="https://www.youtube.com/@PHfreitas90" target="_blank" rel="noopener">YouTube</a><br>Conteúdo diário</p></div>
+</div>
+<div class="ft-b"><span>© <i id="yr">2026</i> PH Academy.</span><span>Fotos: acervo PH.</span></div>
+</footer>
+<script>
+(function(){
+"use strict";
+var $=function(s,c){return (c||document).querySelector(s)};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+/* P0 assistente embutido */
+var KB=[
+{k:["preço","preco","valor","quanto","pagamento","parcela"],a:"12x de R$ 30,72 ou R$ 297 à vista, com 7 dias de garantia. É só ir em Evoluir agora."},
+{k:["módulo","modulo","aula","trilha","conteúdo"],a:"3 trilhas por nível com aulas curtas, mais trilha de mentalidade. Comece pela do seu nível."},
+{k:["iniciante","nunca joguei","começar"],a:"Trilha 01, do zero ao primeiro Elite. Sem pré-requisito."},
+{k:["defesa","marcação"],a:"Aula 05, defesa manual de verdade, na trilha intermediária."},
+{k:["ataque","gol","finalização"],a:"Aulas 06 e 07: ataque imprevisível e finalização por zona."},
+{k:["mental","tilt","nervoso","ansiedade","foco"],a:"Use o diagnóstico de mentalidade aqui na página. Protocolo na hora."},
+{k:["acesso","tempo","duração","quanto tempo"],a:"1 ano completo com todas as atualizações inclusas."},
+{k:["live","ao vivo","youtube","instagram"],a:"Lives no Instagram e YouTube. Links na seção Lives."}
+];
+var FB='Não sei ainda. Tente perguntar sobre preço, trilhas ou mentalidade.';
+var css="#wxb{position:fixed;right:1.2rem;bottom:1.2rem;z-index:150;width:60px;height:60px;border-radius:50%;border:0;background:#b6f34a;color:#0a0f0a;font-size:1.5rem;cursor:pointer;font-family:inherit;box-shadow:0 8px 30px rgba(0,0,0,.4)}#wxp{position:fixed;right:1.2rem;bottom:5.2rem;z-index:150;width:min(350px,90vw);background:#151515;color:#f5f5f5;border:1px solid rgba(255,255,255,.15);border-radius:18px;overflow:hidden;display:none;flex-direction:column}#wxp.on{display:flex}#wxh{padding:.9rem 1.1rem;font-weight:800;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;background:#b6f34a;color:#0a0f0a;display:flex;justify-content:space-between;align-items:center}#wxx{cursor:pointer}#wxm{padding:1rem 1.1rem;max-height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:.6rem;font-size:.92rem;line-height:1.55}#wxm .u{align-self:flex-end;background:rgba(255,255,255,.12);border-radius:12px 12px 3px 12px;padding:.6rem .9rem;max-width:85%}#wxm .b{align-self:flex-start;background:rgba(255,255,255,.07);border-radius:12px 12px 12px 3px;padding:.6rem .9rem;max-width:90%}#wxf{display:flex;border-top:1px solid rgba(255,255,255,.12)}#wxi{flex:1;background:none;border:0;color:#f5f5f5;padding:.9rem 1rem;font-size:.95rem;font-family:inherit;outline:none;min-width:0}#wxs{background:none;border:0;color:#b6f34a;font-size:1.3rem;padding:0 1rem;cursor:pointer}";
+var st=document.createElement("style");st.textContent=css;document.head.appendChild(st);
+var w=document.createElement("div");w.innerHTML='<button id="wxb" aria-label="Perguntar">✦</button><div id="wxp"><div id="wxh"><span>Chat PH</span><span id="wxx">×</span></div><div id="wxm"></div><div id="wxf"><input id="wxi" placeholder="Pergunte..." autocomplete="off"><button id="wxs" aria-label="Enviar">→</button></div></div>';document.body.appendChild(w);
+var said=false;
+function say(t,who){var m=document.getElementById("wxm");var d=document.createElement("div");d.className=who;d.textContent=t;m.appendChild(d);m.scrollTop=m.scrollHeight}
+function answer(t){var l=t.toLowerCase(),best=null,bs=0;KB.forEach(function(e){var s=0;e.k.forEach(function(k){if(l.indexOf(k)>=0)s+=k.length});if(s>bs){bs=s;best=e}});say(best?best.a:FB,"b")}
+function send(){var i=document.getElementById("wxi");var t=i.value.trim();if(!t)return;say(t,"u");i.value="";setTimeout(function(){answer(t)},350)}
+document.getElementById("wxb").onclick=function(){var p=document.getElementById("wxp");p.classList.toggle("on");if(p.classList.contains("on")&&!said){said=true;say("Olá! Sou o chat da PH Academy. Pergunte sobre trilhas, preço ou mentalidade.","b")}};
+document.getElementById("wxx").onclick=function(){document.getElementById("wxp").classList.remove("on")};
+document.getElementById("wxs").onclick=send;
+document.getElementById("wxi").addEventListener("keydown",function(e){if(e.key==="Enter")send()});
+/* P1 site */
+var pl=$("#pl"),pln=$("#pln"),n=0;
+var rm=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function hidePl(){pl.classList.add("g");document.body.style.overflow="";setTimeout(function(){pl.remove()},800)}
+if(rm){hidePl()}else{document.body.style.overflow="hidden";var t=setInterval(function(){n=Math.min(100,n+Math.ceil(Math.random()*14));pln.textContent=n;if(n>=100){clearInterval(t);setTimeout(hidePl,250)}},110)}
+var cur=$("#cur");
+if(window.matchMedia("(hover:hover)").matches){
+document.addEventListener("mousemove",function(e){cur.style.left=e.clientX+"px";cur.style.top=e.clientY+"px"});
+$$("a,button,.fq-q").forEach(function(el){
+el.addEventListener("mouseenter",function(){cur.style.width="44px";cur.style.height="44px"});
+el.addEventListener("mouseleave",function(){cur.style.width="14px";cur.style.height="14px"});
+});
+}
+var hd=$("#hd"),hdn=$("#hdn");
+window.addEventListener("scroll",function(){hd.classList.toggle("f",window.scrollY>40)},{passive:true});
+$("#hdm").addEventListener("click",function(){hdn.classList.toggle("o")});
+$$("#hdn a").forEach(function(a){a.addEventListener("click",function(){hdn.classList.remove("o")})});
+var mqt=$("#mqt");mqt.innerHTML+=mqt.innerHTML;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.12});
+$$(".rv").forEach(function(el){io.observe(el)});
+/* P2 mentalidade */
+var QZ={tilt:"Protocolo anti-tilt: perdeu de 2, respira 30 segundos, anota 1 erro real e joga a próxima sem chat. Tilt é dado, não destino.",final:"Protocolo de final: rotina idêntica de aquecimento, 3 respirações antes do apito e foco só no próximo lance. Final se joga lance a lance.",rank:"Protocolo anti-rank: ele também erra. Estuda 1 padrão dele nos 10 primeiros minutos e pune. Respeito não é medo."};
+$$(".qz button").forEach(function(b){b.addEventListener("click",function(){var q=$("#qzr");q.textContent=QZ[b.getAttribute("data-q")];q.classList.add("on")})});
+$$(".fq-i").forEach(function(it){var q=$(".fq-q",it),a=$(".fq-a",it);q.addEventListener("click",function(){var open=it.classList.contains("o");$$(".fq-i.o").forEach(function(o){o.classList.remove("o");$(".fq-a",o).style.maxHeight="0"});if(!open){it.classList.add("o");a.style.maxHeight=a.scrollHeight+"px"}})});
+$("#yr").textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
