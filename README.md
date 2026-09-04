@@ -1,6 +1,6 @@
 # PH Academy
 
-Plataforma gamificada do PH Freitas (EA FC), multijogos desde o dia um: trilhas por nível com aulas curtas, diagnóstico de mentalidade, chat PH, preço e checkout Hotmart reais, fotos do acervo dele.
+Página de apresentação do PH Freitas (EA FC): catálogo das trilhas por nível, questionário de mentalidade e assistente por respostas fixas. Checkout e acesso ao curso ficam na plataforma externa. Não há player, login ou progresso do aluno neste repositório.
 
 ```powershell
 python -m http.server 8000
